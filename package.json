@@ -4,10 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+
+    "lint:check": "eslint ./src/**/*.js",
+    "lint:fix": "eslint ./src/**/*.js --fix",
+
     "api:docs": "npx aglio -p 3004 --theme-variables flatly -s -i documentation/api-cep.apib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.23.0"
+  }
 }
