@@ -1,0 +1,53 @@
+FORMAT: 1A
+
+# API CEP
+
+# Group Endereço
+
+## Endereço por CEP [/api/address/{?zipCode}]
+ 
+### Buscar endereço por CEP [GET]
+
++ Parameters
+    + zipCode (optional, string) - CEP do endereço
+
++ Request 200 (application/json)
+
++ Response 200 (application/json)
+    + Attributes(OutputCep)
+
++ Response 400 (application/json)
+    + Attributes(OutputBadRequest)
+
++ Response 404 (application/json)
+    + Attributes(OutputNotFound)
+
++ Response 500 (application/json)
+    + Attributes(OutputInternalServerError)
+
+
+
+# Data Structure
+
+
+## InputCep (object)
++ cep: `22775036` (string)
+
+
+## OutputCep (object)
++ cep: `22775036` (string)
++ street: `Rua dois de abril` (string)
++ neighborhood: `Centro` (string)
++ city: `São Paulo` (string)
++ state: `SP` (string)
+
+
+## OutputNotFound (object)
++ error: `CEP não encontrado` (string)
+
+## OutputBadRequest (object)
++ error: `CEP inválido` (string)
+
+## OutputInternalServerError (object)
++ error: `Erro interno do servidor` (string)
+
