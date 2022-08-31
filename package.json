@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-
     "lint:check": "eslint ./src/**/*.js",
     "lint:fix": "eslint ./src/**/*.js --fix",
-
+    "format:check": "prettier --check ./src/",
+    "format:write": "prettier --write ./src/",
     "api:docs": "npx aglio -p 3004 --theme-variables flatly -s -i documentation/api-cep.apib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.23.0"
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "2.7.1"
   }
 }
