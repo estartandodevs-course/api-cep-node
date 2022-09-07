@@ -16,9 +16,9 @@ const QUERY = `
         WHERE zip_code = $1;
 `;
 
-async function searchAddressByZipCode(zipCode) {
+async function loadAddressByZipCode(zipCode) {
     const { rows } = await connection.query(QUERY, [zipCode]);
     return rows[0];
 }
 
-module.exports = { QUERY, searchAddressByZipCode };
+module.exports = { QUERY, loadAddressByZipCode };
